@@ -1,28 +1,22 @@
 import java.util.Scanner;
 
-public class LargestArrayElement {
+public class MultipleOfThree {
 
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        int[] values = new int[5];
+        System.out.print("Enter the limit: ");
+        int limit = input.nextInt();
 
-        System.out.println("Enter 5 integers:");
+        System.out.println("Multiples of 3:");
 
-        for (int index = 0; index < values.length; index++) {
-            values[index] = input.nextInt();
-        }
+        for (int value = 1; value <= limit; value++) {
 
-        int largestValue = values[0];
-
-        for (int value : values) {
-            if (value > largestValue) {
-                largestValue = value;
+            if (value % 3 == 0) {
+                System.out.print(value + " ");
             }
         }
-
-        System.out.println("Largest element = " + largestValue);
 
         input.close();
     }
