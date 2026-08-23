@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SearchArrayElement {
@@ -6,30 +7,21 @@ public class SearchArrayElement {
 
         Scanner input = new Scanner(System.in);
 
-        int[] values = new int[5];
+        Integer[] numbers = new Integer[5];
 
         System.out.println("Enter 5 integers:");
 
-        for (int index = 0; index < values.length; index++) {
-            values[index] = input.nextInt();
+        for (int index = 0; index < numbers.length; index++) {
+            numbers[index] = input.nextInt();
         }
 
         System.out.print("Enter the number to search: ");
-        int searchValue = input.nextInt();
+        int searchNumber = input.nextInt();
 
-        boolean found = false;
-
-        for (int value : values) {
-            if (value == searchValue) {
-                found = true;
-                break;
-            }
-        }
-
-        if (found) {
-            System.out.println(searchValue + " is present in the array.");
+        if (Arrays.asList(numbers).contains(searchNumber)) {
+            System.out.println("Found");
         } else {
-            System.out.println(searchValue + " is not present in the array.");
+            System.out.println("Not Found");
         }
 
         input.close();
